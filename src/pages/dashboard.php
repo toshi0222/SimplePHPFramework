@@ -8,7 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 $role = htmlspecialchars($_SESSION['role'] ?? 'unknown', ENT_QUOTES, 'UTF-8');
 
 // service_code 表示用（渡されたもの）
-$serviceCode = $_POST['service_code'] ?? $_GET['service_code'] ?? '(なし)';
+$serviceCode = $request->input('service_code', '(なし)');
 ?>
 
 <!DOCTYPE html>
