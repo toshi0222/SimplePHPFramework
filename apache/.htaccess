@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# .phpファイル以外で、実ファイルやディレクトリが存在する場合はそれをそのまま返す
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule !\.php$ - [L]
+
+# .phpを含むURLでリクエストされた場合、index.phpに内部転送（URLはそのまま）
+RewriteCond %{REQUEST_URI} \.php$
+RewriteRule ^ index.php [L]

@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./apache/.htaccess:/var/www/html/.htaccess
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
