@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['role'] = $users[$user]['role'];
         $_SESSION['company_code'] = $users[$user]['company_code'];
 
-        header('Location: /dashboard.php'); // service_code はURLクエリで渡す必要あり
+        header('Location: /pages/dashboard.php'); // service_code はURLクエリで渡す必要あり
         exit;
     } else {
         $errorMessage = 'ユーザー名またはパスワードが間違っています。';

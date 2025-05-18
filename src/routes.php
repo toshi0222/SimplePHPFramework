@@ -16,7 +16,7 @@ return [
     ],
 
     // ダッシュボード（認証 + ロール + サービスコードチェック）
-    'dashboard.php' => [
+    'pages/dashboard.php' => [
         'file' => 'pages/dashboard.php',
         'middleware' => [
             'AuthMiddleware',   // ログイン必須
