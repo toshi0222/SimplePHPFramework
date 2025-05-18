@@ -8,6 +8,8 @@ class ServiceCodeFilterMiddleware {
         $companyCode = $_SESSION['company_code'] ?? null;
         $serviceCode = $request->input('service_code');
 
+        // service_codeの許可リストをcompay_code別に配列に記載。
+        // ここでは静的に記載しているが、DBから生成する方がベター
         $allowed = [
             10 => ['A10', 'A20'],
             20 => ['A20', 'B10'],
@@ -15,7 +17,7 @@ class ServiceCodeFilterMiddleware {
         ];
 
         if ($companyCode === null || $serviceCode === null) {
-            $_SESSION['error_message'] = 'service_codeが指定されていません。';
+            $_SESSION['error_message'] = 'サービスコードが指定されていません。';
             return;
         }
 
